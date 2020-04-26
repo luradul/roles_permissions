@@ -1,0 +1,8 @@
+1. srediti rute
+2. umesto middleware-a postaviti gate-ove i policy klase
+3. refaktorisati kod vezan za autorizaciju
+4. napraviti passport auth
+5. napraviti API za postove
+6. dodati captchu za komentare
+7. dodati socialite logovanje
+8. videti da preko guzzle-a iscitas neki API i snimis ga kod sebe u bazu i dalje ga prikazujes i sl

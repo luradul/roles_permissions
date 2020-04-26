@@ -24,7 +24,7 @@ class ClearanceMiddleware
 
         if ($request->is('posts/create'))//If user is creating a post
         {
-            if (!Auth::user()->hasPermissionTo('Create Post'))
+            if (!Auth::user()->hasPermissionTo('create-post'))
             {
                 abort('401');
             }

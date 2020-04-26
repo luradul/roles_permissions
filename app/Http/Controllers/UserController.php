@@ -59,7 +59,6 @@ class UserController extends Controller
         $roles = $request['roles']; //Retrieving the roles field
         //Checking if a role was selected
         if (isset($roles)) {
-
             foreach ($roles as $role) {
                 $userRole = Role::where('id', '=', $role)->firstOrFail();
                 $user->assignRole($userRole); //Assigning role to user
@@ -71,25 +70,13 @@ class UserController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $user)
     {
-        $user = User::findOrFail($id); //Get user with specified id
         $roles = Role::get(); //Get all roles
 
         return view('users.edit', compact('user', 'roles')); //pass user and roles data to view
